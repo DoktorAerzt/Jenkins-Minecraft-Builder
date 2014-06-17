@@ -15,7 +15,11 @@ buildgradle() {
         }
     }
     dependencies {
-        classpath /'net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT/'
+        classpath '
+    echo -e "\047"
+    echo 'net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT'
+    echo -e "\047"
+    echo '
     }
 }
 
@@ -45,4 +49,4 @@ processResources
 }'
 }
 buildgradle $1 $2 $3 $4 > build.gradle
-sh gradlew build
+bash ./gradlew build
