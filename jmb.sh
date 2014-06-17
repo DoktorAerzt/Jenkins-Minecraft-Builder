@@ -45,4 +45,4 @@ processResources
 }'
 }
 buildgradle $1 $2 $3 $4 > build.gradle
-gradlew build
+sh gradlew build
