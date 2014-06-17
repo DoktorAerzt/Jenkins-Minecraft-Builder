@@ -15,7 +15,7 @@ buildgradle() {
         }
     }
     dependencies {
-        classpath \047net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT\047
+        classpath \047net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT\047
     }
 }
 
@@ -27,6 +27,21 @@ archivesBaseName = "'$3'"
 
 minecraft {
     version = "'$4'"
+}
+dependencies {
+    // you may put jars on which you depend on in ./libs
+    // or you may define them like so..
+    //compile "some.group:artifact:version:classifier"
+    //compile "some.group:artifact:version"
+      
+    // real examples
+    //compile \047com.mod-buildcraft:buildcraft:6.0.8:dev\047  // adds buildcraft to the dev env
+    //compile \047com.googlecode.efficient-java-matrix-library:ejml:0.24\047 // adds ejml to the dev env
+
+    // for more info...
+    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
+    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
 }
 processResources
 {
