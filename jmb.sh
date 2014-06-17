@@ -1,8 +1,8 @@
-﻿#!/bin/sh
+#!/bin/bash
 echo "[MFB] Hello and Welcome to the Jenkins Minecraft Builder"
 echo "[MFB] This is only a small status update. So that you know that the JMB is running"
 buildgradle() {
-    echo 'buildscript {
+    echo -e 'buildscript {
     repositories {
         mavenCentral()
         maven {
@@ -15,15 +15,11 @@ buildgradle() {
         }
     }
     dependencies {
-        classpath '
-    echo -e "\047"
-    echo 'net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT'
-    echo -e "\047"
-    echo '
+        classpath \047net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT\047
     }
 }
 
-apply plugin: /'forge/'
+apply plugin: \047forge\047
 
 version = "'$1'"
 group= "'$2'"
@@ -36,15 +32,15 @@ processResources
 {
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
-        include /'mcmod.info/'
+        include \047mcmod.info\047
 
         // replace version and mcversion
-        expand /'version/':project.version, /'mcversion/':project.minecraft.version
+        expand \047version\047:project.version, \047mcversion\047:project.minecraft.version
     }
 
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
-        exclude /'mcmod.info/'
+        exclude \047mcmod.info\047
     }
 }'
 }
