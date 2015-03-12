@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "[MFB] Hello and Welcome to the Jenkins Minecraft Builder"
-echo "[MFB] This is only a small status update. So that you know that the JMB is running"
+echo "[JMB] Hello and Welcome to the Jenkins Minecraft Builder"
+echo "[JMB] This is only a small status update. So that you know that the JMB is running"
 buildgradle() {
     echo -e 'buildscript {
     repositories {
