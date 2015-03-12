@@ -60,4 +60,15 @@ processResources
 }'
 }
 buildgradle $1 $2 $3 $4 > build.gradle
+mkdir forge_version
+if ls forge_version/$1 1> /dev/null 2>&1; then
+    echo "[JMB] Forge sould be on the right version"
+else
+    echo "[JMB] The JMB will try to install a new Forge version"
+    bash ./gradlew setupDecompWorkspace --refresh-dependencies
+    cd forge_version
+    rm $(ls ./)
+    cd ..
+fi
+touch forge_version/$1
 bash ./gradlew build
